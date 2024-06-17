@@ -5,8 +5,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:mintsamplle/utils/Utils.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
+import 'package:mintsamplle/utils/mint_sdk.dart';
 
 
 const platform = MethodChannel('mint-android-app');
@@ -52,14 +52,19 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: ElevatedButton(onPressed: (){
-            generateAuth('');
+            // generateAuth('');
+            invokeSDK(context);
           }, child: Text('Invoke Mint SDK')),
         ),
       ),
     );
   }
 
-
+void invokeSDK(BuildContext context) async{
+    var sdk = MintSdk();
+    bool? result = await sdk.mintSDk(sso: sso, fcmToken: fcmToken, domain: domain)
+ 
+  }
 Future<dynamic> generateAuth(String loginType) async {
  // Show progress indicator
   setState(() {
@@ -190,7 +195,7 @@ void showToastMessage(String message) {
   void openMintLib(Map<String,String> jsonArray) async{
     try{
       try{
-        await MintUtils.platform.invokeMethod('openMintLib',jsonArray);
+        // await MintUtils.platform.invokeMethod('openMintLib',jsonArray);
       }catch(e){}
     } catch (e) {
       print('Error: $e');

@@ -1,41 +1,81 @@
+group 'com.iw.mintsdk'
+version '1.0.01'
+
 buildscript {
     ext.kotlin_version = '1.8.0'
     repositories {
         google()
-        mavenCentral()
         maven { url 'https://www.jitpack.io'
             credentials {
                 username authToken
             }
         }
+
+        mavenCentral()
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:4.1.3")
+        classpath 'com.android.tools.build:gradle:7.1.3'
+        //noinspection GradleDependency
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-allprojects {
+rootProject.allprojects {
     repositories {
         google()
-        mavenCentral()
         maven { url 'https://www.jitpack.io'
             credentials {
                 username authToken
             }
         }
+        mavenCentral()
     }
 }
 
-rootProject.buildDir = '../build'
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(':app')
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+
+
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 33
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 33
+        if (project.android.hasProperty('namespace')) {
+            namespace 'com.example.mintsamplle'
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
 }
 
-tasks.register("clean", Delete) {
-    delete rootProject.buildDir
+dependencies {
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.github.investwell-tools:mint-android-app:1.0.4")
+    implementation "androidx.fragment:fragment-ktx:1.6.2"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
 }
