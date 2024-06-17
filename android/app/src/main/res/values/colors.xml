@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009477</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#FF02D594</color>
+    <color name="colorToolbar">#009477</color>
+    <color name="colorToolbarIconTint">#FFFFFF</color>
+    <color name="colorToolbarText">#FFFFFF</color>
+    <color name="colorTertiary">#2A488B</color>
+    <color name="volt_primary">#2B4C19</color>
+
+    <!--Custom releted Need to Change-->
+    <color name="colorShimmerBackground">#aaa</color>
+    <color name = "black">#000000</color>
+    <color name = "black_light">#1f1f1f</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#51b53f</color>
+    <color name="green2">#43ce41</color>
+    <color name="orange">#FFA800</color>
+    <color name="red">#a30000</color>
+    <color name="blue">#5076B0</color>
+    <color name="marketBlue">#0070F8</color>
+    <color name="marketRed">#ED3338</color>
+    <color name="marketGreen">#006400</color>
+    <color name="textColorPrimary">#4e4e4e</color>
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#eaeaea</color>
+    <color name="dot_dark_screen2">#eaeaea</color>
+    <color name="dot_dark_screen3">#eaeaea</color>
+    <color name="dot_dark_screen4">#eaeaea</color>
+    <color name="riskColorConservative">#83c605</color>
+    <color name="riskColorModeratelyConservative">#a0b304</color>
+    <color name="riskColorModerate">#f8bd17</color>
+    <color name="riskColorModeratelyAggressive">#df7d24</color>
+    <color name="riskColorAggressive">#d44c4c</color>
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#004392</color>
+    <color name="dot_light_screen2">#004392</color>
+    <color name="dot_light_screen3">#004392</color>
+    <color name="dot_light_screen4">#004392</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+    <color name="light_white">#f9fafd</color>
+    <color name="light_gray_portfolio">#F9FAFE</color>
+    <color name="light_gray">#eaeaea</color>
+    <color name="light_gray2">#ddd</color>
+    <color name="gray">#a8a8a8</color>
+    <color name="gray2">#616064</color>
+    <color name="gray_dashboard">#616064</color>
+    <color name="default_text_colot">#808080</color>
+    <color name="transparent">#00000000</color>
+    <color name="dailog_color">#fd9104</color>
+    <color name="cardview_top_name_color">#4669c1</color>
+    <color name="graph_marker_color">#009477</color>
+    <color name="ratingbar_color">#e4a900</color>
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="divider_color">#d6d2d2</color>
+    <color name="lightPrimaryTextColor">#30363d</color>
+
+    <color name="red_for_dashboard">#b71a3b</color>
+    <color name="green_for_dashboard">#63a583</color>
+
+
+    <color name="layout3_mf">#8ac249</color>
+    <color name="layout3_sharebond">#ccdc39</color>
+    <color name="layout3_fd">#ffc108</color>
+    <color name="layout3_other">#fd9700</color>
+
+    <color name="layout3_debt">#fd9700</color>
+    <color name="layout3_equity">#407093</color>
+    <color name="layout3_hybrid">#6caf6f</color>
+    <color name="layout3_liquid">#e8ae4d</color>
+    <color name="layout3_arbitrage">#5076B0</color>
+    <color name="layout3_other_color">#004392</color>
+
+
+
+
+    <!--Color Grey Shade-->
+    <color name="colorGrey_500">#aeaaab</color>
+    <color name="colorGrey_400">#a8a8a8</color>
+    <color name="colorGrey_100">#FAFAFA</color>
+    <color name="colorGrey_250">#eaeaea</color>
+    <color name="colorGrey_200">#ddd</color>
+    <color name="colorGrey_300">#aaa</color>
+    <color name="colorGrey_600">#616064</color>
+    <color name="coloGrey_50">#FAFAFA</color>
+    <!--End Color Grey Shade-->
+
+    <!--Other Colors used in app-->
+    <color name="colorYellow">#fd9104</color>
+    <color name="colorRed">#ED3338</color>
+    <color name="colorPurple">#4a3b90</color>
+    <color name="colorGreen">#51b53f</color>
+    <color name="colorOrange">#FFA800</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorBlue">#5076B0</color>
+    <color name="colorBlack">#000000</color>
+
+    <!---App Buttons Theme Colors-->
+    <!--Primary common.client.utils.customView.CustomButton-->
+    <color name="btnPrimaryBackgroundColor">#009477</color>
+    <color name="btnDesableColor">#00947790</color>
+    <color name="btnPrimaryTextColor">#FFFFFF</color>
+    <!--Secondary common.client.utils.customView.CustomButton-->
+    <color name="btnSecondaryBackgroundColor">#FFFFFF</color>
+    <color name="btnSecondaryTextColor">#FF02D594</color>
+    <!--Tertiary common.client.utils.customView.CustomButton-->
+    <color name="btnTertiaryBackgroundColor">#00000000</color>
+    <color name="btnTertiaryTextColor">#FFFFFF</color>
+
+
+    <color name="errorColor">#F44336</color>
+    <color name="colorVerifiedGreen">#006a4e</color>
+    <color name="fatcheetTextColor">#333333</color>
+    <color name="colorFactSheetRed">#ff0018</color>
+
+    <color name="colormarket1">#264653</color>
+    <color name="colormarket2">#2a9d8f</color>
+    <color name="colormarket3">#e9c46a</color>
+    <color name="colormarket4">#f4a261</color>
+    <color name="colormarket5">#dcf0f4</color>
+
+    <color name="light_sky_color">#e8f1fa</color>
+    <color name="light_pink_color">#FFF2FD</color>
+    <color name="light_blue">#E1EBF2</color>
+    <color name="light_yellow">#EDE9D7</color>
+
+</resources>
