@@ -9,18 +9,13 @@ You can add the Investwell Mint app to your existing mobile app using this docum
 **Step 1.** Add the JitPack repository to your build file
 
 Add it in your root build.gradle at the end of repositories:
-
+```
 allprojects {
-
 repositories {
-
-...
-
 maven { url 'https\://jitpack.io' }
-
 }
-
 }
+```
 
 **Step 2**. Add the dependency
 
@@ -37,15 +32,12 @@ implementation("com.github.investwell-tools:mint-android-app:1.1.alpha14")****
 **com.github.investwell-tools:mint-android-app:1.1.alpha14**
 
 **Step 3**. Add the token to $HOME/.gradle/gradle.properties
+```
+authToken=jp\_r9me618aib27fnsqpnfo3i5hg4
+```
 
-authToken=jp\_r9me618aib27fnsqpnfo3i5hg4\
-\
 // Ask for the latest authToken, if this doesn’t work
 
-\
-\
-\
-\
 
 
 Then use authToken as the username in your build.gradle:// at setting level or app level 
@@ -54,7 +46,7 @@ Gradle version stable below 8.0 
 
 build.gradle(:android)/build.gradle.kts(:android)
 
-\
+```
 
 
 allprojects {
@@ -78,8 +70,8 @@ allprojects {
     }
 
 }
+```
 
-\
 
 
 **In Case of (Kotlin) DSL**:  (Optional) You may need to approve JitPack Application on GitHub
@@ -95,7 +87,7 @@ For Native Apps
 Instead of Application extend AppApplication
 
 For flutter required to mention it in your Android Manifest file
-
+```
 android:allowBackup="false"
 
 tools:replace="android:allowBackup"
@@ -103,7 +95,7 @@ tools:replace="android:allowBackup"
 android:dataExtractionRules="@xml/data\_extraction\_rules"
 
 android:name="investwell.activity.AppApplication"
-
+```
 **->** Follow the Documentation for SSO Token 
 
 [**SSO Login Procedure for Mint.docx**](https://docs.google.com/document/d/1oQkwSGAKciRj1VhnjhS9h0IVCCeFG1JA/edit?usp=sharing\&ouid=107811576253862815873\&rtpof=true\&sd=true)
@@ -124,7 +116,7 @@ Pass the ssoToken, fcmToken,classNameWithPackage 
 **classWithPackage** = “com.example.sample.ManiActivity”
 
 \
-\
+```
 
 
 private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MainActivity.packageName}.MainActivity") {
@@ -134,14 +126,14 @@ private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage
         minced.invokeMintSDK(sso,fcmToken,domain,classWithPackage)
 
     }
-
+```
 **Note:** In case of getting manifest file provider error, Then please add
 
- ****
+```
 
        tools:replace="android:resource
 
-\
+```
 
 
 **Mint SDK for Flutter implementation**
@@ -166,13 +158,13 @@ Accepting arguments 
 
 
 **Step1. Create a dart class**
-
+```
 class MintUtils{
 
   static const platform = const MethodChannel('mint-android-app');
 
 }
-
+````
 **bool isPlatformAndroid() {**
 
   **return Platform.isAndroid;**
@@ -226,7 +218,7 @@ private val CHANNEL = "mint-android-app"
     }
 
 **Step 4. implement this code in oncreate()**
-
+```
 GeneratedPluginRegistrant.registerWith(FlutterEngine(this))
 
         flutterEngine?.dartExecutor?.binaryMessenger?.let {  MethodChannel(it,CHANNEL).setMethodCallHandler { call, result ->
@@ -305,29 +297,30 @@ sdkInitialized = true
 
         } }
 
- ****
+```
 
 **Step 5.**
 
 1. Create a new activity MintSDKInit  with binding 
-
+```
  buildFeatures {
 
         dataBinding = true
 
     }
-
+```
 2. Add launchmode 
-
- \<activity android:name=".MintSDKInit"
+```
+<activity android:name=".MintSDKInit"
 
             android:launchMode="singleInstancePerTask"
 
             />
 
+```
 3. MintSDKInit Activity:
 
-\
+```
 
 
 class MintSDKInit: FlutterActivity() {
@@ -447,8 +440,9 @@ removeAllkeys()
 
 }
 
+```
 for **✅ Build artifacts: 1.1.alpha14**
-
+```
  private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MintSDKInit.packageName}.MintSDKInit") {
 
         val mintSdk = MintSDK(this\@MainActivity)
@@ -457,8 +451,11 @@ for **✅ Build artifacts: 1.1.alpha14**
 
     }
 
+```
+
 for **✅ Build artifacts: 1.1.alpha14** 
 
+```
     private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MintSDKInit.packageName}.MintSDKInit") {
 
         val mintSdk = MintSDK(this\@MintSDKInit)
@@ -467,11 +464,12 @@ for **✅ Build artifacts: 1.1.alpha14** 
 
     }
 
-\
+```
 
 
 // for native  
 
+```
 private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MintSDKInit.packageName}.MintSDKInit") {
 
         val mintSdk = MintSDK(this\@MainActivity)
@@ -480,6 +478,7 @@ private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage
 
     }
 
+```
 **Note: Use ✅ Build artifacts:**
 
 **com.github.investwell-tools:mint-android-app:1.1.alpha14**
@@ -505,7 +504,8 @@ Checkout Flutter Engine Root View controller for Android\
 
 AndroidManifest.xml
 
-\<activity
+```
+<activity
 
             android:name=".kotlin.MintSDKInit"
 
@@ -515,9 +515,7 @@ AndroidManifest.xml
 
             android:parentActivityName=".kotlin.MainActivity"/>
 
-\
-\
-\
+```
 
 
 **Java:**
@@ -531,8 +529,9 @@ AndroidManifest.xml
   : This class helps to manage your navigation as above mention 
 
 AndroidManifest.xml
+```
 
-\<activity
+<activity
 
             android:name=".java.MintSDKInitJ"
 
@@ -541,6 +540,7 @@ AndroidManifest.xml
             android:launchMode="singleInstancePerTask"
 
             android:parentActivityName=".java.MainActivityJ"/>
+```
 
 **Ios Integration->**
 
