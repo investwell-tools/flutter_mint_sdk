@@ -1,93 +1,677 @@
-# mint-flutter-sdk
+**Mint SDK Gradle File Implementation**
 
-
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/iwapps-flutter/mint-flutter-sdk.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/iwapps-flutter/mint-flutter-sdk/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+Version: 7 | Updated on 19th Nov, 2024
 
 ***
 
-# Editing this README
+You can add the Investwell Mint app to your existing mobile app using this document.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+**Step 1.** Add the JitPack repository to your build file
 
-## Suggestions for a good README
+Add it in your root build.gradle at the end of repositories:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+allprojects {
 
-## Name
-Choose a self-explaining name for your project.
+repositories {
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+...
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+maven { url 'https\://jitpack.io' }
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+}
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+}
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+**Step 2**. Add the dependency
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+dependencies { implementation 'com.github.investwell-tools:mint-android-app:replace\_with\_latest\_version'}
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+**Latest Version:**
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+**✅ Build artifacts: 1.1.alpha14**
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+**Add into build.gradle(:app)/build....kts(:app)**
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+implementation("com.github.investwell-tools:mint-android-app:1.1.alpha14")****
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+**com.github.investwell-tools:mint-android-app:1.1.alpha14**
 
-## License
-For open source projects, say how it is licensed.
+**Step 3**. Add the token to $HOME/.gradle/gradle.properties
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+authToken=jp\_r9me618aib27fnsqpnfo3i5hg4\
+\
+// Ask for the latest authToken, if this doesn’t work
+
+\
+\
+\
+\
+
+
+Then use authToken as the username in your build.gradle:// at setting level or app level 
+
+Gradle version stable below 8.0 
+
+build.gradle(:android)/build.gradle.kts(:android)
+
+\
+
+
+allprojects {
+
+    repositories {
+
+        google()
+
+        mavenCentral()
+
+        maven { url 'https\://www\.jitpack.io'
+
+            credentials {
+
+                username authToken
+
+            }
+
+        }
+
+    }
+
+}
+
+\
+
+
+**In Case of (Kotlin) DSL**:  (Optional) You may need to approve JitPack Application on GitHub
+
+**Mint SSO Implementation:**
+
+**Step 1:**
+
+Add in your manifest file required 
+
+For Native Apps
+
+Instead of Application extend AppApplication
+
+For flutter required to mention it in your Android Manifest file
+
+android:allowBackup="false"
+
+tools:replace="android:allowBackup"
+
+android:dataExtractionRules="@xml/data\_extraction\_rules"
+
+android:name="investwell.activity.AppApplication"
+
+**->** Follow the Documentation for SSO Token 
+
+[**SSO Login Procedure for Mint.docx**](https://docs.google.com/document/d/1oQkwSGAKciRj1VhnjhS9h0IVCCeFG1JA/edit?usp=sharing\&ouid=107811576253862815873\&rtpof=true\&sd=true)
+
+\
+
+
+**Step 2:** once you generate the SSOToken then follow the instructions**:**
+
+Pass the ssoToken, fcmToken,classNameWithPackage 
+
+**Example:**
+
+**ssoToken** = 8ff7b6dddb12407dcd0cb3d1fcdabee60b6107863019725689705b587ebb817a
+
+**fcmToken** =  your\_app\_fcmToken
+
+**classWithPackage** = “com.example.sample.ManiActivity”
+
+\
+\
+
+
+private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MainActivity.packageName}.MainActivity") {
+
+        val mintSdk = MintSDK(this\@MainActivity)
+
+        minced.invokeMintSDK(sso,fcmToken,domain,classWithPackage)
+
+    }
+
+**Note:** In case of getting manifest file provider error, Then please add
+
+ ****
+
+       tools:replace="android:resource
+
+\
+
+
+**Mint SDK for Flutter implementation**
+
+Note: Flutter version below 3.8.0
+
+**✅ Build artifacts: 1.1.alpha14**
+
+ ****
+
+invokeMintSDKForFlutter()
+
+Accepting arguments 
+
+1. Sso
+
+2. fcmToken
+
+3. domain
+
+\
+
+
+**Step1. Create a dart class**
+
+class MintUtils{
+
+  static const platform = const MethodChannel('mint-android-app');
+
+}
+
+**bool isPlatformAndroid() {**
+
+  **return Platform.isAndroid;**
+
+**}**
+
+**Step2. Create a dart function where you want to invoke mintSDK**
+
+**void openMintLib(Map\<String, String> jsonArray) async {**
+
+    **try {**
+
+      **try {**
+
+        **if (isPlatformAndroid()) {**
+
+          **await MintUtils.platform.invokeMethod('openMintLib', jsonArray);**
+
+        **} else {**
+
+          **await MintUtils.platform.invokeMethod('openMintLibIOS', jsonArray);**
+
+        **}**
+
+      **} catch (e) {}**
+
+    **} catch (e) {**
+
+      **print('Error: $e');**
+
+    **}**
+
+  **}**
+
+**// in this jsonArray you will pass** 
+
+'ssoToken':'SSOToken',
+
+          'fcmToken':'your\_fcm\_token',
+
+          'Domain':'your\_domain'
+
+**Step 3. implement channel methods at your MainActivity.kt**
+
+private val CHANNEL = "mint-android-app"
+
+ companion object{
+
+        var sdkInitialized:Boolean?=false
+
+    }
+
+**Step 4. implement this code in oncreate()**
+
+GeneratedPluginRegistrant.registerWith(FlutterEngine(this))
+
+        flutterEngine?.dartExecutor?.binaryMessenger?.let {  MethodChannel(it,CHANNEL).setMethodCallHandler { call, result ->
+
+            if (call.method == "openMintLib") {
+
+                try {
+
+                    var domain =""
+
+                    var sso =""
+
+                    var fcm =""
+
+                    val argumentsString: String? = call.arguments?.toString()
+
+                    val tokenResponse = JSONObject(call.arguments.toString())
+
+                    if (tokenResponse.toString().isEmpty()){
+
+                        argumentsString.let { jsonString->
+
+                            try {
+
+                                val newResponse = JSONObject(jsonString)
+
+                                domain = newResponse.optString("domain")
+
+                                sso = newResponse.optString("ssoToken")
+
+                                fcm = newResponse.optString("fcmToken")
+
+                            }catch (e:Exception){e.printStackTrace()}
+
+                        }
+
+                    }else{
+
+                        domain = tokenResponse.optString("domain")
+
+                        sso = tokenResponse.optString("ssoToken")
+
+                        fcm = tokenResponse.optString("fcmToken")
+
+                    }
+
+sdkInitialized = true
+
+                    val intentsdk = Intent(this\@MainActivity, MintSDKInit::class.java)
+
+                    intentsdk.putExtra("route","main")
+
+                    intentsdk.putExtra("sso",sso)
+
+                    intentsdk.putExtra("domain",domain)
+
+                    intentsdk.putExtra("fcm",fcm)
+
+                    startActivity(intentsdk)
+
+                    result.success("Success")
+
+                }catch (e: JSONException) {
+
+                    // Handle JSON parsing error
+
+                    result.error("JSON Parsing Error", e.message, null)
+
+                }
+
+            } else {
+
+                result.notImplemented()
+
+            }
+
+        } }
+
+ ****
+
+**Step 5.**
+
+1. Create a new activity MintSDKInit  with binding 
+
+ buildFeatures {
+
+        dataBinding = true
+
+    }
+
+2. Add launchmode 
+
+ \<activity android:name=".MintSDKInit"
+
+            android:launchMode="singleInstancePerTask"
+
+            />
+
+3. MintSDKInit Activity:
+
+\
+
+
+class MintSDKInit: FlutterActivity() {
+
+    lateinit var binding: ActivitySdkInitBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+
+        binding = DataBindingUtil.setContentView(this\@MintSDKInit,R.layout.activity\_sdk\_init)
+
+//        setContentView(R.layout.activity\_sdk\_init)
+
+        getBundles()
+
+    }
+
+    private fun getBundles(){
+
+       if (intent !=null && intent.hasExtra("route") && MainActivity.sdkInitialized==true){
+
+           val domain :String = intent.getStringExtra("domain")!!
+
+           val fcm :String= intent.getStringExtra("fcm")!!
+
+           val sso :String= intent.getStringExtra("sso")!!
+
+MainActivity.sdkInitialized=false
+
+           invokeSDK(sso = sso, fcmToken = fcm, domain = domain)
+
+       }else{
+
+           // remove activity
+
+if(MainActivity.sdkInitialized==false){
+
+startActivity(this,MainActivity::class.java)\
+finish()
+
+}else{
+
+finish()
+
+}
+
+ 
+
+       }
+
+    }
+
+    private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MintSDKInit.packageName}.MintSDKInit") {
+
+        val mintSdk = MintSDK(this\@MintSDKInit)
+
+        mintSdk.invokeMintSDKForFlutter(sso,fcmToken,domain)
+
+    }
+
+    override fun onBackPressed() {
+
+        super.onBackPressed()
+
+removeAllkeys()
+
+        finish()
+
+    }
+
+ private fun checkBackStack(){
+
+        val taskStackBuilder = TaskStackBuilder.create(this\@MintSDKInit)
+
+        taskStackBuilder.addNextIntentWithParentStack(
+
+            Intent(this\@MintSDKInit, MainActivity::class.java)
+
+        )
+
+        taskStackBuilder.startActivities()
+
+    }
+
+    override fun onPause() {
+
+        super.onPause()
+
+        removeAllKeys()
+
+    }
+
+    override fun onDestroy() {
+
+        super.onDestroy()
+
+        removeAllKeys()
+
+    }
+
+    private fun removeAllKeys(){
+
+        if (intent.hasExtra("route")){
+
+            intent.removeExtra("route")
+
+//            intent.removeFlags(Intent.FLAG\_ACTIVITY\_CLEAR\_TASK)
+
+        }
+
+    }
+
+\
+\
+
+
+}
+
+for **✅ Build artifacts: 1.1.alpha14**
+
+ private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MintSDKInit.packageName}.MintSDKInit") {
+
+        val mintSdk = MintSDK(this\@MainActivity)
+
+        mintSdk.invokeMintSDK(sso,fcmToken,domain,classWithPackage)
+
+    }
+
+for **✅ Build artifacts: 1.1.alpha14** 
+
+    private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MintSDKInit.packageName}.MintSDKInit") {
+
+        val mintSdk = MintSDK(this\@MintSDKInit)
+
+        mintSdk.invokeMintSDKForFlutter(sso,fcmToken,domain)
+
+    }
+
+\
+
+
+// for native  
+
+private fun invokeSDK(sso: String,fcmToken:String,domain:String,classWithPackage:String= "${this\@MintSDKInit.packageName}.MintSDKInit") {
+
+        val mintSdk = MintSDK(this\@MainActivity)
+
+        mintSdk.invokeMintSDK(sso,fcmToken,domain,classWithPackage)
+
+    }
+
+**Note: Use ✅ Build artifacts:**
+
+**com.github.investwell-tools:mint-android-app:1.1.alpha14**
+
+**Note:** Code Language Specification & Implementation 
+
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXczZjwHOBOta2gAKCyyemF18FQH5yy0rBVO-V9kvUzfgFkRJqvgocj5b5Tw-R98NnDNtC7BD8VZBJoBJsreHfDoOb7ktNK2vRvCXAjObCs5aW14ZqSq2-_NsbRb3A-y4_kZThj-7g?key=NGXb516k4R3G8anRchXyYg)
+
+Use the above reference code as per your default language(Kotlin/java)\
+\
+Checkout Flutter Engine Root View controller for Android\
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeqoRkQqrWf6dlWEJHE0f5OC7Dpp6JxZmVUT0pjynXYoPx8a8N-Lkknqz_xweM2YkmzDKEAqrKGFPf73moiP6k2UV5-fVviG3DRmQZzHl62r5lbUPs65-4391lV_WyP5PcbN1ai?key=NGXb516k4R3G8anRchXyYg)
+
+**Kotlin:**
+
+[MainActivity.kt](https://gist.github.com/laxmikant86/1bbb0e4503e929d9f5698ebc6632d024) 
+
+  : Your Default MainActivity  when you are using Kotlin add this code snippet   
+
+[MintSDKInit.kt](https://gist.github.com/laxmikant86/4f61e83d8259c70283daea9c33ed437a)
+
+  : This class helps to manage your navigation as above mention 
+
+AndroidManifest.xml
+
+\<activity
+
+            android:name=".kotlin.MintSDKInit"
+
+            android:exported="false"
+
+            android:launchMode="singleInstancePerTask"
+
+            android:parentActivityName=".kotlin.MainActivity"/>
+
+\
+\
+\
+
+
+**Java:**
+
+[MainActivityJ.java](https://gist.github.com/laxmikant86/141013421c09dc967a3dddf098d3e174) (Click here to see code) 
+
+: Your Default MainActivity  when you are using Kotlin add this code snippet   
+
+[MintSDKInitJ.java](https://gist.github.com/laxmikant86/811a42feea2105caf1e8553b2b535d23) (Click here to see code)
+
+  : This class helps to manage your navigation as above mention 
+
+AndroidManifest.xml
+
+\<activity
+
+            android:name=".java.MintSDKInitJ"
+
+            android:exported="false"
+
+            android:launchMode="singleInstancePerTask"
+
+            android:parentActivityName=".java.MainActivityJ"/>
+
+**Ios Integration->**
+
+**Step 1**. **In ios folder go to the pod file and add the below code**
+
+**pod 'MintFramework', :git => 'https\://dharmendraInvestwell\@bitbucket.org/mintframeworkios/mintframework.git', :branch => 'master'**
+
+**Step 2**. **At the end of pod file add**
+
+**post\_install do |installer|**
+
+  **installer.pods\_project.targets.each do |target|**
+
+    **target.build\_configurations.each do |config|**
+
+      **config.build\_settings\['EXPANDED\_CODE\_SIGN\_IDENTITY'] = ""**
+
+      **config.build\_settings\['CODE\_SIGNING\_REQUIRED'] = "NO"**
+
+      **config.build\_settings\['CODE\_SIGNING\_ALLOWED'] = "NO"**
+
+    **config.build\_settings\['ONLY\_ACTIVE\_ARCH'] = 'NO'**
+
+  **config.build\_settings\['IPHONEOS\_DEPLOYMENT\_TARGET'] = '13.0'**
+
+  **config.build\_settings\["EXCLUDED\_ARCHS\[sdk=iphonesimulator\*]"] = "arm64"**
+
+**config.build\_settings\['BUILD\_LIBRARY\_FOR\_DISTRIBUTION'] = 'YES'**
+
+  **xcconfig\_path = config.base\_configuration\_reference.real\_path**
+
+          **xcconfig = File.read(xcconfig\_path)**
+
+          **xcconfig\_mod = xcconfig.gsub(/DT\_TOOLCHAIN\_DIR/, "TOOLCHAIN\_DIR")**
+
+          **File.open(xcconfig\_path, "w") { |file| file << xcconfig\_mod }**
+
+     **end**
+
+  **end**
+
+**end**
+
+**Step 3.run command pod Install**
+
+**Step 4.ios>runner>AppDelegate.swift rplace code**
+
+**import UIKit**
+
+**import Flutter**
+
+**import MintFrameworks**
+
+**@UIApplicationMain**
+
+**@objc class AppDelegate: FlutterAppDelegate {**
+
+  **override func application(**
+
+    **\_ application: UIApplication,**
+
+    **didFinishLaunchingWithOptions launchOptions: \[UIApplication.LaunchOptionsKey: Any]?**
+
+  **) -> Bool {**
+
+    **// let controller : FlutterViewController = navigationController.topViewController as! FlutterViewController**
+
+    **let controller : FlutterViewController = window?.rootViewController as! FlutterViewController**
+
+    **let mintChannel = FlutterMethodChannel(name: "mint-android-app", binaryMessenger: controller.binaryMessenger)**
+
+     ****
+
+    **mintChannel.setMethodCallHandler({**
+
+        **(call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in**
+
+        **if call.method == "openMintLibIOS" {**
+
+            **guard let args = call.arguments as? \[String: Any],**
+
+                  **let ssoToken = args\["ssoToken"] as? String,**
+
+                  **let fcmToken = args\["fcmToken"] as? String,**
+
+                  **let domain = args\["domain"] as? String else {**
+
+                **result(FlutterError(code: "INVALID\_ARGS",**
+
+                                    **message: "Invalid arguments",**
+
+                                    **details: nil))**
+
+                **return**
+
+            **}**
+
+            ****
+
+            **self.invokeMintSDK(ssoToken: ssoToken, fcmToken: fcmToken, domain: domain)**
+
+            **result("Success")**
+
+        **} else {**
+
+            **result(FlutterMethodNotImplemented)**
+
+        **}**
+
+    **})**
+
+      **GeneratedPluginRegistrant.register(with: self)**
+
+    **return super.application(application, didFinishLaunchingWithOptions: launchOptions)**
+
+  **}**
+
+  **private func invokeMintSDK(ssoToken: String, fcmToken: String, domain: String) {**
+
+    ****
+
+    **if let rootViewController = UIApplication.shared.windows.first?.rootViewController {**
+
+        **MintSDKInvoke().invokeMintAppFormFlutterApp(domain: domain, token: ssoToken, navigateToview: "", controller: rootViewController)**
+
+    **}**
+
+  **}**
+
+**}**
+
+**Step 5. ios >** open Runner.xcworkspace with xcode Go to build setting > User Script Sandboxing Set to NO
+
+**Step 6**. Do not forget to give permission for location, camera, faceid/biometric, photo library and NSAppTransportSecurity in Info.plist. Ignore if already given.
