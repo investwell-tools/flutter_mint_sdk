@@ -1,2 +1,4 @@
-## [0.0.1]
-- initial logs
+## 1.0.0
+
+* Initial release: Dart `MintSdk` wrapper plus the Android plugin bridging to
+  `com.investwell.tools:mint-sdk:7.6.11`.

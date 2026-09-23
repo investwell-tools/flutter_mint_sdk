@@ -1,0 +1,24 @@
+name: flutter_demo
+description: "Demonstrates how to use the mint_sdk plugin."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.0-290.4.beta
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mint_sdk:
+    path: ../
+  cupertino_icons: ^1.0.8
+  # Used by SsoAuthService to call the demo.investwell.app aggregator APIs.
+  http: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
