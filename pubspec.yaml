@@ -1,7 +1,7 @@
 name: mint_sdk
 description: "Flutter plugin wrapping the Investwell Mint Android SDK."
 version: 7.6.13
-repository: https://github.com/investwell/mint-sdk-flutter
+repository: https://github.com/investwell/flutter_mint_sdk
 # Distributed as a git dependency pinned to a release tag, not via pub.dev.
 publish_to: 'none'
 
