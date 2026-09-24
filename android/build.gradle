@@ -55,5 +55,5 @@ android {
 }
 
 dependencies {
-    implementation("com.investwell.tools:mint-sdk:7.6.11")
+    implementation("com.investwell.tools:mint-sdk:7.6.13")
 }

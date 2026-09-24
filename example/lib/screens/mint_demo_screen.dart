@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mint_sdk/mint_sdk.dart';
 import '../services/sso_auth_service.dart';
 
-/// Flutter counterpart of the native demo's MainActivity
-/// (demo/src/main/java/com/iw/mint/demo/MainActivity.kt) — same domain,
-/// same custom app key, same five actions and testing-mode switch.
+/// do not use this screen in production, it is only for demo purposes
+/// 
 class MintDemoScreen extends StatefulWidget {
   const MintDemoScreen({super.key});
 
