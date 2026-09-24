@@ -14,7 +14,7 @@ The package is distributed as a git dependency pinned to a release tag:
 dependencies:
   mint_sdk:
     git:
-      url: https://github.com/investwell/mint-sdk-flutter.git
+      url: https://github.com/investwell-tools/flutter_mint_sdk.git
       ref: v1.0.0
 ```
 
